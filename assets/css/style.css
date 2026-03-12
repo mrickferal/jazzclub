@@ -14,9 +14,206 @@
 /* ============================================================ */
 :root {
   --black: #000000;
-  --white: #ffffff;
+  --silver: #cccccc;
+  --red: #ff0000;
+  --blue: #0000ff;
+  --grapefruit-pink: #ff7474;
+  --cinnabar: #ff3131;
+  --medium-slate-blue: #7476ff;
+  --bright-indigo: #3134ff;
+  --amber-gold: #fbbc05;
+  --olive: #8a8942;
 }
 
 body {
   margin: 0;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+  text-transform: uppercase;
+  background-color: var(--black);
+}
+
+/* ============================================================ */
+/* ============== MOBILE WITH SMALL SCREEN SIZE =============== */
+/* ============================================================ */
+@media screen and (min-width: 320px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: auto;
+  }
+
+  .panel {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 2.5em;
+    margin-top: 2em;
+    box-shadow: 0 0 10vw 0vw var(--medium-slate-blue), 0 0 2vw 0.4vw var(--blue),
+      inset 0 0 0.5vw 0.2vw var(--medium-slate-blue),
+      inset 0 0 0.25vw 0.2vw var(--blue);
+    border-radius: 1em;
+  }
+
+  .panel h1 {
+    font-family: "Mali", cursive;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--silver);
+    text-shadow: 0.1vw 0vw 0.25vw var(--medium-slate-blue),
+      0.15vw 0vw 0.25vw var(--medium-slate-blue),
+      1vw 0vw 0.1vw var(--bright-indigo), 0.15vw 0vw 0.1vw var(--bright-indigo),
+      0.4vw 0vw 0.1vw var(--bright-indigo), 0.1vw 0vw 2vw var(--bright-indigo),
+      0.15vw 0vw 2vw var(--bright-indigo), 0.4vw 0vw 2vw var(--bright-indigo),
+      0.1vw 0vw 1vw var(--blue), 0.15vw 0vw 1vw var(--blue), 0.4vw 0vw 5vw,
+      var(--blue), 0.1vw 0vw 5vw var(--blue), 0.15vw 0vw 20vw var(--blue),
+      0.4vw 0vw 10vw var(--blue), 0.1vw 0vw 10vw var(--blue),
+      0.15vw 0vw 30vw var(--blue), 0.4vw 0vw 10vw var(--blue);
+    animation: blink 2s infinite alternate;
+  }
+
+  .panel span {
+    align-self: flex-start;
+    font-size: 1em;
+    font-family: Raleway, sans-serif;
+    letter-spacing: 0.2em;
+    color: var(--silver);
+    text-shadow: 0.1vw 0vw 0.25vw var(--grapefruit-pink),
+      0.125vw 0vw 0.25vw var(--grapefruit-pink), 0.1vw 0vw 0.1vw var(--cinnabar),
+      0.125vw 0vw 0.1vw var(--cinnabar), 0.15vw 0vw 0.1vw var(--cinnabar),
+      0.1vw 0vw 2vw var(--cinnabar), 0.1vw 0vw 0.1vw var(--cinnabar),
+      0.15vw 0vw 2vw var(--cinnabar), 0.1vw 0vw 1vw var(--red),
+      0.125vw 0vw 1vw var(--red), 0.15vw 0vw 5vw var(--red),
+      0.1vw 0vw 5vw var(--red), 0.125vw 0vw 20vw var(--red),
+      0.15vw 0vw 10vw var(--red);
+  }
+
+  .panel img {
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    width: 6em;
+    filter: drop-shadow(0 0.15vw 0.3vw var(--amber-gold))
+      drop-shadow(0 0.15vw 0.3vw var(--olive));
+    animation: saxo-blink 2s infinite alternate;
+  }
+
+  @keyframes blink {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+      text-shadow: 0 0 0.5vw var(--medium-slate-blue),
+        0.1vw 0 0.5vw var(--medium-slate-blue),
+        0.3vw 0 0.5vw var(--medium-slate-blue), 0 0 1.2vw var(--bright-indigo),
+        0.1vw 0 1.2vw var(--bright-indigo), 0.3vw 0 1.2vw var(--bright-indigo),
+        0 0 3vw var(--blue), 0.1vw 0 3vw var(--blue), 0.3vw 0 3vw var(--blue);
+    }
+
+    20%,
+    24%,
+    55% {
+      text-shadow: none;
+    }
+  }
+
+  @keyframes saxo-blink {
+    0%,
+    9%,
+    15%,
+    79%,
+    83%,
+    100% {
+      filter: drop-shadow(0 0.15vw 0.3vw var(--amber-gold))
+        drop-shadow(0 0.15vw 0.3vw var(--olive));
+    }
+
+    10%,
+    14%,
+    80%,
+    82% {
+      filter: none;
+    }
+  }
+}
+
+/* ============================================================ */
+/* ============== MOBILE WITH MEDIUM SCREEN SIZE ============== */
+/* ============================================================ */
+@media screen and (min-width: 390px) {
+  .panel {
+    padding: 1.5em 3em;
+  }
+
+  .panel h1 {
+    font-size: 2.5em;
+  }
+
+  .panel span {
+    font-size: 1.25em;
+  }
+
+  .panel img {
+    top: 44%;
+    width: 8em;
+  }
+}
+
+/* ============================================================ */
+/* =============== MOBILE WITH LARGE SCREEN SIZE ============== */
+/* ============================================================ */
+@media screen and (min-width: 428px) {
+}
+
+/* ============================================================ */
+/* ========================== TABLET ========================== */
+/* ============================================================ */
+@media screen and (min-width: 768px) {
+  .panel {
+    padding: 5em 7.5em;
+  }
+
+  .panel h1 {
+    font-size: 3em;
+  }
+
+  .panel span {
+    font-size: 1.5em;
+  }
+
+  .panel img {
+    top: 46%;
+    left: 55%;
+    width: 14em;
+  }
+}
+
+/* ============================================================ */
+/* ========================== DESKTOP ========================= */
+/* ============================================================ */
+@media screen and (min-width: 992px) {
+  .panel {
+    padding: 6em 8.5em;
+  }
+
+  .panel h1 {
+    font-size: 4em;
+  }
+
+  .panel span {
+    font-size: 2em;
+  }
+
+  .panel img {
+    top: 46%;
+    left: 53%;
+    width: 16em;
+  }
 }
